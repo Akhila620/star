@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Star Pattern</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Welcome, Akhila 🌸</h2>
+    <form method="POST" action="/pattern">
+        <input type="number" name="rows" placeholder="Enter number of rows" required>
+        <button type="submit">Show Pattern</button>
+    </form>
+    <div class="pattern">
+        {% if pattern %}
+            <h3>Your Star Pattern:</h3>
+            <p>{{ pattern | safe }}</p>
+        {% endif %}
+    </div>
+    <a href="/logout">Logout</a>
+</div>
+</body>
+</html>
